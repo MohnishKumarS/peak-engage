@@ -1,0 +1,1445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif !important;
+            background-color: #f5f5f5;
+            color: #6e6e6e;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        section {
+            border-bottom: 1px dotted #d9d9d9;
+        }
+
+        .sec {
+            margin-bottom: 20px;
+        }
+
+        .container {
+            padding: 60px 20px;
+            border-left: 1px dotted #d9d9d9;
+            border-right: 1px dotted #d9d9d9;
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                padding: 60px 12px;
+                width: 95%;
+            }
+        }
+
+        @media (min-width: 1400px) {
+            .container {
+                max-width: 1200px !important;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .container {
+                padding: 60px 40px;
+            }
+        }
+
+        .btn-main {
+            display: inline-block;
+            background-color: #1c1c1c;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 700;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            box-shadow: rgba(255, 255, 255, 0.15) 0px 0px 20px 1.64px inset, rgba(0, 0, 0, 0.13) 0px 0.839802px 0.503881px -0.3125px, rgba(0, 0, 0, 0.13) 0px 1.99048px 1.19429px -0.625px, rgba(0, 0, 0, 0.13) 0px 3.63084px 2.1785px -0.9375px, rgba(0, 0, 0, 0.13) 0px 6.03627px 3.62176px -1.25px, rgba(0, 0, 0, 0.13) 0px 9.74808px 5.84885px -1.5625px, rgba(0, 0, 0, 0.13) 0px 15.9566px 9.57398px -1.875px, rgba(0, 0, 0, 0.13) 0px 27.4762px 16.4857px -2.1875px, rgba(0, 0, 0, 0.13) 0px 50px 30px -2.5px;
+
+        }
+
+        .btn-text {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .btn-text div {
+            transition: transform 0.4s ease;
+        }
+
+        /* Hover or click effect */
+        .btn-main:hover .btn-text div,
+        .btn-main:active .btn-text div {
+            transform: translateY(-25px);
+        }
+
+        .btn-main:hover {
+            background-color: #0056b3;
+            color: #fff;
+            /* transform: translateY(-2px); */
+        }
+
+        .peak-top {
+            margin-bottom: 30px;
+
+            .row {
+                align-items: end;
+            }
+
+            .peak-subtitle {
+                font-size: 10px;
+                font-weight: 600;
+                padding: 8px 16px;
+                color: #ff6f61;
+                margin-bottom: 20px;
+                text-transform: uppercase;
+                border: 1px solid #ff6f61;
+                border-radius: 28px;
+                width: fit-content;
+            }
+
+            .peak-title {
+                font-size: 40px;
+
+                & .one {
+                    display: block;
+                    color: #6e6e6e;
+                }
+
+                & .two {
+                    display: block;
+                    color: #1c1c1c;
+                    font-weight: 600;
+                }
+            }
+
+            .peak-text {
+                font-size: 17px;
+                margin: 0;
+            }
+        }
+
+        .peak-features .peak-card {
+            height: auto;
+        }
+
+        .peak-card {
+            height: 100%;
+            padding: 24px;
+            border: 1px solid #d9d9d9;
+            border-radius: 20px;
+            /* margin-bottom: 20px; */
+
+            &.blacky {
+                background-color: #1c1c1c;
+                color: #d1d1d1 !important;
+                border: none;
+                box-shadow: 0 .839802px .503881px -.3125px #00000021, 0 1.99048px 1.19429px -.625px #00000021, 0 3.63084px 2.1785px -.9375px #00000021, 0 6.03627px 3.62176px -1.25px #00000021, 0 9.74808px 5.84885px -1.5625px #00000021, 0 15.9566px 9.57398px -1.875px #00000021, 0 27.4762px 16.4857px -2.1875px #00000021, 0 50px 30px -2.5px #00000021;
+
+                .card-title {
+                    color: #fff !important;
+                }
+            }
+
+            .card-head {
+                display: flex;
+                align-items: center;
+                margin-bottom: 15px;
+
+                /* .dot {
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    background-color: #ff6f61;
+                    border-radius: 50%;
+                    margin-right: 10px;
+                    animation: blowing 2s ease-in-out infinite;
+                } */
+            }
+
+
+
+            .card-title {
+                color: #1c1c1c;
+                font-size: 24px;
+                margin: 0;
+            }
+
+            .card-desc {
+                font-size: 16px;
+                margin: 0;
+            }
+
+            .card-media {
+                margin-bottom: 25px;
+            }
+
+            .card-img {
+                border-radius: 12px;
+                width: 100px;
+                height: auto;
+            }
+
+
+
+        }
+
+        .dot {
+            position: relative;
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background-color: #ff6f61;
+            border-radius: 50%;
+            margin-right: 10px;
+            animation: dotPulse 2s infinite ease-out;
+        }
+
+        .dot::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-color: inherit;
+            opacity: 0.6;
+            animation: blowRipple 2s infinite ease-out;
+        }
+
+        @keyframes blowRipple {
+            0% {
+                transform: scale(1);
+                opacity: 0.6;
+            }
+
+            100% {
+                transform: scale(2.5);
+                opacity: 0;
+            }
+        }
+
+        /* Color variants */
+        .dot.green {
+            background-color: #28a745;
+            /* green */
+        }
+
+        .dot.blue {
+            background-color: #007bff;
+            /* blue */
+        }
+
+        .dot.yellow {
+            background-color: #ffc107;
+            /* yellow */
+        }
+
+        .dot.purple {
+            background-color: #6f42c1;
+            /* purple */
+        }
+
+        .dot.gray {
+            background-color: #6c757d;
+            /* gray */
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <div class="page-warapper">
+        <header class="peak-header">
+            <div class="container p-0">
+                <div class="peak-nav">
+                    <img src="assets/images/icons/instagram.png" class="img-fluid" alt="">
+                    <button href="#" class="btn-main">
+                        <div class="btn-text">
+                            <div>Book A Call</div>
+                            <div>Now</div>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <style>
+            /* navbar */
+            .peak-header {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: 999;
+                transition: all 0.3s ease;
+                background-color: transparent;
+            }
+
+
+            .peak-header .peak-nav {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 20px 40px;
+                background-color: transparent;
+                transition: all 0.3s ease;
+            }
+
+
+            .peak-header.scrolled {
+                background-color: #f5f5f5;
+            }
+
+
+            .peak-header img {
+                height: 50px;
+                transition: transform 0.3s ease;
+            }
+
+            .peak-header.scrolled img {
+                transform: scale(0.95);
+            }
+        </style>
+        <script>
+            window.addEventListener("scroll", function () {
+                const header = document.querySelector(".peak-header");
+                if (window.scrollY > 100) {
+                    header.classList.add("scrolled");
+                } else {
+                    header.classList.remove("scrolled");
+                }
+            });
+        </script>
+
+
+        <section class="peak-hero">
+            <div class="container py-0">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="hero-block">
+                            <h1 class="hero-title">
+                                Recover $30,000+ in Lost E-Commerce Revenue
+                                <!-- <span class="shake"><i class="fa-regular fa-paper-plane"></i></span> -->
+                                <br>
+                                Every Month—No Extra Ad Spend or Effort <span class="shake"><i
+                                        class="fa-regular fa-paper-plane"></i></span>
+                            </h1>
+                            <p class="hero-subtitle">
+                                Every day you delay, you’re leaking thousands in abandoned carts and lost sales.
+                                We fix your pipeline fast—automated systems recovering your revenue in 72 hours,
+                                guaranteed.
+                            </p>
+                            <div class="hero-btn">
+                                <button href="#" class="btn-main">
+                                    <div class="btn-text">
+                                        <div>Book A Call</div>
+                                        <div>Now</div>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="peak-lists">
+                            <div class="peak-lists-inner">
+                                <div class="peak-list">
+                                    <div class="list-head">
+                                        <h3 class="list-title">For E-commerce Founders</h3>
+                                        <!-- <span>Aug 12</span> -->
+                                    </div>
+                                    <p>Recover lost sales with automated cart, review, and win-back flows.</p>
+                                </div>
+
+                                <div class="peak-list">
+                                    <div class="list-head">
+                                        <h3 class="list-title">For Marketing Teams</h3>
+                                    </div>
+                                    <p>Track and optimize every campaign for real ROI, not just reach.</p>
+                                </div>
+
+                                <div class="peak-list">
+                                    <div class="list-head">
+                                        <h3 class="list-title">For Content Creators</h3>
+                                    </div>
+                                    <p>Create faster and stay on-brand with AI-powered insights.</p>
+                                </div>
+
+                                <div class="peak-list">
+                                    <div class="list-head">
+                                        <h3 class="list-title">For Agencies</h3>
+                                    </div>
+                                    <p>Deliver client growth with automated, data-driven systems.</p>
+                                </div>
+
+                                <div class="peak-list">
+                                    <div class="list-head">
+                                        <h3 class="list-title">For Startups</h3>
+                                    </div>
+                                    <p>Launch and scale fast with plug-and-play growth automations.</p>
+                                </div>
+
+                                <div class="peak-list">
+                                    <div class="list-head">
+                                        <h3 class="list-title">For Product Brands</h3>
+                                    </div>
+                                    <p>Drive reviews, referrals, and repeat sales automatically.</p>
+                                </div>
+
+                                <div class="peak-list">
+                                    <div class="list-head">
+                                        <h3 class="list-title">For Consultants</h3>
+                                    </div>
+                                    <p>Turn projects into repeatable, automated growth systems.</p>
+                                </div>
+
+                                <div class="peak-list">
+                                    <div class="list-head">
+                                        <h3 class="list-title">For Growth Partners</h3>
+                                    </div>
+                                    <p>Connect campaigns and conversions for compounding growth.</p>
+                                </div>
+                                <div class="peak-list">
+                                    <div class="list-head">
+                                        <h3 class="list-title">For SaaS Founders</h3>
+                                    </div>
+                                    <p>Boost retention and upsells with automated customer journeys.</p>
+                                </div>
+
+                                <div class="peak-list">
+                                    <div class="list-head">
+                                        <h3 class="list-title">For D2C Brands</h3>
+                                    </div>
+                                    <p>Scale customer loyalty through smart re-engagement flows.</p>
+                                </div>
+
+                                <div class="peak-list">
+                                    <div class="list-head">
+                                        <h3 class="list-title">For Business Coaches</h3>
+                                    </div>
+                                    <p>Automate client touchpoints and grow referrals effortlessly.</p>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <style>
+            /* header block */
+            .hero-block {
+                padding: 200px 0 100px;
+
+                .hero-title {
+                    font-size: 40px;
+                    font-weight: 600;
+                    color: #1c1c1c;
+                    margin-bottom: 20px;
+
+                    .shake {
+                        padding: 14px;
+                        margin-left: 10px;
+                        background-color: rgb(27, 165, 165);
+                        font-size: 30px;
+                        border-radius: 12px;
+                        color: #ffffff;
+                        display: inline-block;
+                        transform-origin: top center;
+                        /* important for bell effect */
+                        animation: bellSwing 2s ease-in-out infinite;
+                    }
+                }
+
+                .hero-subtitle {
+                    font-size: 20px;
+                    margin-bottom: 30px;
+                }
+
+                @media (max-width: 768px) {
+                    padding: 100px 0 50px;
+
+                    .hero-title {
+                        font-size: 28px;
+                    }
+
+                    .hero-subtitle {
+                        font-size: 16px;
+                    }
+                }
+            }
+
+
+            .peak-lists {
+                height: 700px;
+                /* adjust as needed */
+                overflow: hidden;
+                position: relative;
+
+                .peak-lists-inner {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 30px;
+                    animation: scrollHoldDown 6s ease-in-out infinite;
+                }
+
+                .peak-list {
+                    width: 300px;
+                    margin: auto;
+                    background: #fff;
+                    border-radius: 20px;
+                    /* padding: 20px 30px; */
+                    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+                    transform-origin: center;
+                    transition: transform 0.3s ease;
+
+
+                    .list-head {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        border-bottom: 1px solid #e0e0e0;
+                        padding: 12px;
+
+
+                        .list-title {
+                            font-size: 20px;
+                            margin: 0;
+                            color: #1c1c1c;
+                        }
+
+                        span {
+                            font-size: 12px;
+                            color: #6e6e6e;
+                        }
+                    }
+
+                    p {
+                        padding: 12px;
+                        margin: 0;
+                        font-size: 16px;
+                    }
+
+                    &:nth-child(1) {
+                        transform: rotate(-3deg);
+                    }
+
+                    &:nth-child(2) {
+                        transform: rotate(2deg);
+                    }
+
+                    &:nth-child(3) {
+                        transform: rotate(-1deg);
+                    }
+
+                    &:nth-child(4) {
+                        transform: rotate(3deg);
+                    }
+
+                    &:nth-child(5) {
+                        transform: rotate(-2deg);
+                    }
+
+                    &:nth-child(6) {
+                        transform: rotate(-2deg);
+                    }
+
+                    &:nth-child(7) {
+                        transform: rotate(2deg);
+                    }
+
+                    &:nth-child(8) {
+                        transform: rotate(-3deg);
+                    }
+
+                    &:nth-child(9) {
+                        transform: rotate(1deg);
+                    }
+
+                    &:nth-child(10) {
+                        transform: rotate(2deg);
+                    }
+                }
+            }
+
+
+
+
+            /* Wrapper for animation */
+
+
+            @keyframes scrollHoldDown {
+                0% {
+                    transform: translateY(0);
+                }
+
+                30% {
+                    transform: translateY(-50%);
+                }
+
+                50% {
+                    transform: translateY(-50%);
+                }
+
+                60% {
+                    transform: translateY(-45%);
+                }
+
+                70% {
+                    transform: translateY(-50%);
+                }
+
+                100% {
+                    transform: translateY(0);
+                }
+            }
+
+            @keyframes bellSwing {
+                0% {
+                    transform: rotate(8deg);
+                }
+
+                20% {
+                    transform: rotate(8deg);
+                }
+
+                50% {
+                    transform: rotate(-12deg);
+                }
+
+                80% {
+                    transform: rotate(-12deg);
+                }
+
+                100% {
+                    transform: rotate(8deg);
+                }
+            }
+        </style>
+
+
+
+
+        <!-- GROW UP -->
+        <section>
+            <div class="container">
+                <div class="peak-top">
+                    <p class="peak-subtitle">
+                        WHERE YOU'RE AT
+                    </p>
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <h2 class="peak-title">
+                                <span class="one">You're Creating</span>
+                                <span class="two">But Not Growing</span>
+                            </h2>
+                        </div>
+                        <div class="col-lg-4">
+                            <p class="peak-text">Boosts lifetime value with automated reviews, referrals, and win-backs.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="peak-sec">
+                    <div class="row flex-column-reverse flex-lg-row">
+                        <div class="col-lg-8 sec">
+                            <div class="peak-card">
+                                <div class="card-head">
+                                    <h3 class="card-title"> Your Complete Digital Ecosystem for Long-Term Growth</h3>
+                                </div>
+
+                                <p class="peak-text">
+                                    Once your biggest leaks are plugged, we help you scale with ongoing automations that
+                                    grow
+                                    revenue month after month:
+                                </p>
+                                <ul class="peak-list">
+                                    <li><span class="dot"></span><strong>Attention Engine:</strong> Drives high-quality
+                                        traffic and leads.</li>
+                                    <li><span class="dot"></span><strong>Conversion Engine:</strong> Converts visitors
+                                        through smart nurturing flows.</li>
+                                    <li><span class="dot"></span><strong>Retention Engine:</strong> Builds lifetime
+                                        value through reviews, referrals, and
+                                        win-backs.</li>
+                                </ul>
+                                <p class="peak-text">
+                                    Every layer is built, tested, and tracked just for your business—so you get
+                                    compounding
+                                    growth far beyond quick wins.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 sec">
+                            <div class="peak-card">
+                                <img src="assets/images/p1.avif" class="img-fluid" loading="lazy" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <style>
+            .peak-list {
+                list-style: none;
+                /* padding: 0; */
+            }
+        </style>
+
+
+<!-- VIDEO -->
+<section>
+    <div class="container">
+        <div class="peak-top">
+            <p class="peak-subtitle">
+                See How It Works
+            </p>
+            <div class="row">
+                <div class="col-lg-8">
+                    <h2 class="peak-title">
+                        <span class="one">You're Earning Praise</span> <span class="two">But Not Profit</span>
+                    </h2>
+                </div>
+                <div class="col-lg-4">
+                    <p class="peak-text">See how real brands grow faster through smart, automated engagement.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="peak-sec">
+            <div class="video-wrapper">
+                <video autoplay muted loop playsinline controls>
+                    <source src="assets/video/anima.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<style>
+    .video-wrapper {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.video-wrapper video {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; /* optional for rounded corners */
+    display: block;
+    object-fit: cover; /* ensures video fills area nicely */
+}
+
+</style>
+
+
+        <!-- WHY CHOOSE -->
+        <section>
+            <div class="container">
+                <div class="peak-top">
+                    <p class="peak-subtitle">
+                        MODULAR SOLUTIONS
+                    </p>
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <h2 class="peak-title">
+                                <span class="one">Why Peak Engage?</span>
+                                <span class="two">Clarity, Authority, & Performance</span>
+                            </h2>
+                        </div>
+                        <div class="col-lg-4">
+                            <p class="peak-text"> We build live revenue systems, not vague strategy decks or fancy
+                                reports</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="peak-features">
+                    <div class="row">
+                        <div class="col-lg-5 sec">
+                            <div class="peak-card blacky">
+                                <div class="row">
+                                    <div class="col-9">
+                                        <p>We build real revenue systems, not strategy decks. Clear insights and monthly
+                                            growth checks.</p>
+                                    </div>
+                                    <div class="col-3">
+                                        <div>
+                                            <img src="assets/images/b3.avif" alt="" class="card-img img-fluid">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="py-5 my-4"></div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="card-head m-0">
+                                            <span class="dot yellow"></span>
+                                            <h3 class="card-title ">Balanced</h3>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <p>We deliver revenue, not reports.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-7">
+                            <div class="row">
+                                <div class="col-md-6">
+
+                                    <div class="peak-card sec">
+                                        <div class="card-head m-0">
+                                            <span class="dot green"></span>
+                                            <h3 class="card-title ">Short & Impactful</h3>
+                                        </div>
+                                        <!-- <p>Our performance-first mindset ensures every strategy is measurable, scalable, and result-driven—no risk, all upside.</p> -->
+                                    </div>
+                                    <div class="peak-card sec">
+                                        <div class="text-center mb-3">
+                                            <img src="assets/images/b1.avif" alt="" class="card-img">
+                                        </div>
+                                        <div class="card-head">
+                                            <span class="dot blue"></span>
+                                            <h3 class="card-title">Built for Clarity</h3>
+                                        </div>
+                                        <p>Our performance-first mindset ensures every strategy is measurable, scalable,
+                                            and result-driven—no risk, all upside.</p>
+
+                                        <!-- <p> You get full visibility and monthly optimizations—no guesswork, just
+                                            transparent insights into what’s driving your revenue.</p> -->
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="peak-card sec">
+                                        <div class="row mb-4">
+                                            <div class="col-8">
+                                                <p>Proven e-commerce automation experts</p>
+                                            </div>
+                                            <div class="col-4">
+                                                <div>
+                                                    <img src="assets/images/b3.avif" alt="" class="card-img img-fluid">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-head">
+                                            <span class="dot purple"></span>
+                                            <h3 class="card-title">Authority in Action</h3>
+                                        </div>
+                                        <p>We don’t just plan—we implement systems that perform, optimize, and grow with
+                                            your business.</p>
+                                        <!-- <p>Real-time dashboards, actionable insights, and continuous performance
+                                            tracking—so you always know what’s working.</p> -->
+
+                                    </div>
+                                    <div class="peak-card">
+                                        <div class="card-head m-0">
+                                            <span class="dot gray"></span>
+                                            <h3 class="card-title">Performance-First</h3>
+                                        </div>
+                                        <!-- <p>Real-time dashboards, actionable insights, and continuous performance tracking—so you always know what’s working.</p> -->
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- service -->
+        <section>
+            <div class="container">
+                <div class="peak-top">
+                    <p class="peak-subtitle">
+                        Solution / Automation section
+                    </p>
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <h2 class="peak-title">
+                                <span class="one">Automated Wins</span>
+                                <span class="two">Smart Recovery</span>
+                            </h2>
+                        </div>
+                        <div class="col-lg-4">
+                            <p class="peak-text"> Peak Engage helps you recover, retain, and re-engage customers with
+                                ease.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="peak-sec">
+                    <div class="row">
+                        <div class="col-md-12 sec">
+                            <div class="peak-card p-3">
+                                <div class="card-block one">
+                                    <div class="card-sec">
+                                        <div>
+                                            <img src="assets/images/b1.avif" class="img-fluid card-img" alt="">
+                                        </div>
+                                        <h4>E-commerce Founders: Stop Leaving $30,000+ in Lost Sales Every Month</h4>
+                                        <!-- <p>Turn competitive research into shoot‑ready ideas and hooks that actually
+                                            work.</p>
+                                        <div class="box">
+                                            <span>Unlimited Ideas</span>
+                                            <span>AVG 5x Views</span>
+                                        </div> -->
+                                        <ul class="list">
+
+                                            <li><span class="dot yellow"></span>Abandoned carts alone steal up to 70% of
+                                                your checkout attempts—money that’s
+                                                walking out the door.</li>
+                                            <li><span class="dot yellow"></span>Manual chasing wastes time and energy
+                                                without reliable returns.</li>
+                                            <li><span class="dot yellow"></span>You need a tested system that works on
+                                                autopilot to get your money back, fast.</li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 sec">
+                            <div class="peak-card p-3">
+                                <div class="card-block two">
+                                    <div class="card-sec">
+                                        <div>
+                                            <img src="assets/images/b1.avif" class="img-fluid card-img" alt="">
+                                        </div>
+                                        <h4>Your Solution — Simple, Outcome-Driven, No Jargon</h4>
+                                        <!-- <p>Turn competitive research into shoot‑ready ideas and hooks that actually
+                                            work.</p>
+                                        <div class="box">
+                                            <span>Unlimited Ideas</span>
+                                            <span>AVG 5x Views</span>
+                                        </div> -->
+                                        <ul class="list">
+
+                                            <li><span class="dot green"></span>Recovering 15-25% of abandoned carts
+                                                and lost checkouts.</li>
+                                            <li><span class="dot green"></span>Nurturing every new buyer into a
+                                                lifelong repeat customer.</li>
+                                            <li><span class="dot green"></span>Automating review & referral systems to
+                                                grow traffic organically</li>
+                                            <li><span class="dot green"></span>Winning back dormant buyers with
+                                                targeted offers</li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 sec">
+                            <div class="peak-card p-3">
+                                <div class="card-block three">
+                                    <div class="card-sec">
+                                        <div>
+                                            <img src="assets/images/b1.avif" class="img-fluid card-img" alt="">
+                                        </div>
+                                        <h4>Front-End Offer — Irresistible and Urgent</h4>
+                                        <p>We build your highest-impact automation in 3 days.
+                                            If you don’t see recovered sales in your live dashboard, you pay a dime.
+                                            No retainers, no contracts—just results.</p>
+                                        <div class="box">
+                                            <span>Revenue Recovery</span>
+                                            <span>Growth Pilot</span>
+                                            <span>Quick Scale</span>
+                                            <span>Sales Revival</span>
+                                        </div>
+
+                                        <!-- <ul class="list">
+
+                                            <li><span class="dot yellow"></span>ARecovering 15-25% of abandoned carts and lost checkouts.</li>
+                                            <li><span class="dot yellow"></span>Nurturing every new buyer into a lifelong repeat customer.</li>
+                                            <li><span class="dot yellow"></span>Automating review & referral systems to grow traffic organically</li>
+                                            <li><span class="dot yellow"></span>Winning back dormant buyers with targeted offers</li>
+
+                                        </ul> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="col-md-6 sec">
+                            <div class="peak-card p-3">
+                                <div class="card-block two">
+                                    <div class="card-sec">
+                                        <div>
+                                            <img src="assets/images/b1.avif" class="img-fluid card-img" alt="">
+                                        </div>
+                                        <h4>Creators</h4>
+                                        <p>Turn competitive research into shoot‑ready ideas and hooks that actually
+                                            work.</p>
+                                        <div>
+                                            <span>Unlimited Ideas</span>
+                                            <span>AVG 5x Views</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 sec">
+                            <div class="peak-card p-3">
+                                <div class="card-block two">
+                                    <div class="card-sec">
+                                        <div>
+                                            <img src="assets/images/b1.avif" class="img-fluid card-img" alt="">
+                                        </div>
+                                        <h4>Creators</h4>
+                                        <p>Turn competitive research into shoot‑ready ideas and hooks that actually
+                                            work.</p>
+                                        <div>
+                                            <span>Unlimited Ideas</span>
+                                            <span>AVG 5x Views</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 sec">
+                            <div class="peak-card p-3">
+                                <div class="card-block two">
+                                    <div class="card-sec">
+                                        <div>
+                                            <img src="assets/images/b1.avif" class="img-fluid card-img" alt="">
+                                        </div>
+                                        <h4>Creators</h4>
+                                        <p>Turn competitive research into shoot‑ready ideas and hooks that actually
+                                            work.</p>
+                                        <div>
+                                            <span>Unlimited Ideas</span>
+                                            <span>AVG 5x Views</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+        <style>
+            /* new block */
+            .card-block {
+                /* background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/images/b2.avif') no-repeat center center; */
+                /* background: #242424; */
+                height: 100%;
+                background-size: cover;
+                padding: 30px 20px;
+                border-radius: 16px;
+                box-shadow: rgba(0, 0, 0, 0.08) 0px 0.839802px 0.503881px -0.3125px, rgba(0, 0, 0, 0.08) 0px 1.99048px 1.19429px -0.625px, rgba(0, 0, 0, 0.08) 0px 3.63084px 2.1785px -0.9375px, rgba(0, 0, 0, 0.08) 0px 6.03627px 3.62176px -1.25px, rgba(0, 0, 0, 0.08) 0px 9.74808px 5.84885px -1.5625px, rgba(0, 0, 0, 0.08) 0px 15.9566px 9.57398px -1.875px, rgba(0, 0, 0, 0.08) 0px 27.4762px 16.4857px -2.1875px, rgba(0, 0, 0, 0.08) 0px 50px 30px -2.5px;
+
+                .card-sec {
+                    position: relative;
+                    color: #d1d1d1;
+                    display: flex;
+                    justify-content: center;
+                    align-items: start;
+                    flex-direction: column;
+                    gap: 15px;
+                    /* height: 100%; */
+                    /* text-align: center; */
+
+
+                    h4 {
+                        color: #ffffff;
+                        margin: 0;
+                        margin-top: 20px;
+                        font-size: 35px;
+                        font-weight: 600;
+                    }
+
+                    p {
+                        margin: 0;
+                        font-size: 16px;
+                    }
+
+                    .box {
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 15px;
+                        /* justify-content: space-between; */
+                        font-size: 10px;
+                        font-weight: 600;
+                        text-transform: uppercase;
+
+                        & span {
+                            padding: 6px 12px;
+                            border: 1px solid #d9d9d9;
+                            border-radius: 20px;
+                        }
+                    }
+
+                    .list {
+                        list-style: none;
+                        padding: 0;
+                    }
+                }
+
+                &.one {
+                    background: #242424;
+
+                }
+
+                &.two {
+                    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/images/b3.avif') no-repeat center center !important;
+                }
+
+                &.three {
+                    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/images/b2.avif') no-repeat center center !important;
+                }
+            }
+        </style>
+
+
+        <!-- How it works -->
+        <section>
+            <div class="container">
+                <div class="peak-top">
+                    <p class="peak-subtitle">
+                        HOW IT WORKS
+                    </p>
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <h2 class="peak-title">
+                                <span class="one">Three steps</span>
+                                <span class="two">To content intelligence</span>
+                            </h2>
+                        </div>
+                        <div class="col-lg-4">
+                            <p class="peak-text"> Simple, Transparent Process That Drives Results</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="peak-sec">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6 col-12 sec">
+                            <div class="peak-card">
+                                <div class="card-media">
+                                    <img src="assets/images/p3.webp" class="img-fluid" loading="lazy" alt="">
+                                </div>
+                                <div class="card-head">
+                                    <h4 class="card-title">1. Audit</h4>
+                                </div>
+                                <p class="card-desc"> 15-min call or data review sees where you’re losing revenue</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-12 sec">
+                            <div class="peak-card">
+                                <div class="card-media">
+                                    <img src="assets/images/p3.webp" class="img-fluid" loading="lazy" alt="">
+                                </div>
+                                <div class="card-head">
+                                    <h4 class="card-title">2. Deploy</h4>
+                                </div>
+                                <p class="card-desc"> Customized, done-for-you automation launched in 72 hours</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-12 sec">
+                            <div class="peak-card blacky">
+                                <div class="card-media">
+                                    <img src="assets/images/p3.webp" class="img-fluid" loading="lazy" alt="">
+                                </div>
+                                <div class="card-head">
+                                    <h4 class="card-title">3. Profit</h4>
+                                </div>
+                                <p class="card-desc">Real-time dashboard tracks every won sale and repeat buyer</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+        <section class="faq-section">
+            <div class="container">
+                <div class="faq-header">
+                    <span class="faq-tag">FAQs</span>
+                    <h2>Questions? <br><span>Answers!</span></h2>
+                </div>
+
+                <div class="faq-container">
+                    <!-- item start -->
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <div>
+                                <span class="faq-number">001</span>
+                                <span class="faq-title">How soon do results come?</span>
+                            </div>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Most clients see recovered sales within 3-7 days.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <div>
+                                <span class="faq-number">002</span>
+                                <span class="faq-title">What platforms do you work with?</span>
+                            </div>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Shopify, WooCommerce, Klaviyo, GoHighLevel, SMS, WhatsApp, and more.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <div>
+                                <span class="faq-number">003</span>
+                                <span class="faq-title">What if I don’t get results?</span>
+                            </div>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>By our Risk-free pilot install, we will provide you the refund + we work for free until
+                                we
+                                get the results for you.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <div>
+                                <span class="faq-number">004</span>
+                                <span class="faq-title">Can I upgrade to full ecosystem after pilot?</span>
+                            </div>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, start small, then scale with retention plus referral automations.</p>
+                        </div>
+                    </div>
+
+                    <!-- item end -->
+                </div>
+            </div>
+        </section>
+
+        <style>
+            .faq-section {
+                background: #242424;
+                border-radius: 20px;
+
+                & .container {
+                    border-color: #525252;
+                }
+            }
+
+            .faq-header h2 {
+                font-size: 40px;
+                margin-bottom: 30px;
+            }
+
+            .faq-header span {
+                color: #fff;
+                font-weight: 600;
+            }
+
+            .faq-header .faq-tag {
+                display: inline-block;
+                padding: 8px 16px;
+                border-radius: 20px;
+                font-size: 10px;
+                margin-bottom: 20px;
+                border: 1px solid #525252;
+                color: #ff6f61;
+                text-transform: uppercase;
+            }
+
+            .faq-container {
+                border-top: 1px solid #333;
+            }
+
+            .faq-item {
+                border-bottom: 1px solid #333;
+                overflow: hidden;
+            }
+
+            .faq-question {
+                background: none;
+                border: none;
+                color: #fff;
+                width: 100%;
+                padding: 20px 0 0;
+                text-align: left;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                cursor: pointer;
+                font-size: 1rem;
+                transition: color 0.3s;
+            }
+
+            .faq-number {
+                color: #666;
+                margin-right: 10px;
+                font-family: monospace;
+                transition: 0.3s ease;
+            }
+
+            .faq-title {
+                font-size: 18px;
+                font-weight: 500;
+            }
+
+            .faq-question:hover .faq-number {
+                color: #fff;
+            }
+
+            .faq-icon {
+                font-size: 1.5rem;
+                color: #999;
+                transition: transform 0.3s;
+            }
+
+            .faq-item.active .faq-icon {
+                transform: rotate(45deg);
+                color: #ff6f61;
+            }
+
+            .faq-item.active .faq-number {
+                color: #fff;
+            }
+
+            .faq-answer {
+                color: #d1d1d1;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.4s ease, opacity 0.3s;
+                opacity: 0;
+                padding: 0 20px 20px 40px;
+
+                & p {
+                    margin: 0;
+                }
+            }
+
+            .faq-item.active .faq-answer {
+                max-height: 200px;
+                opacity: 1;
+
+            }
+        </style>
+
+
+        <script>
+            const faqItems = document.querySelectorAll(".faq-item");
+
+            faqItems.forEach(item => {
+                item.querySelector(".faq-question").addEventListener("click", () => {
+                    item.classList.toggle("active");
+                });
+            });
+        </script>
+
+
+        <footer class="footer">
+            <div class="container pb-0">
+                <p class="footer-text">
+                    <b>Peak Engage</b> — Performance intelligence for brands that play to win. Build, scale, and
+                    optimize your digital growth system with precision.
+                </p>
+
+
+                <div class="footer-sec">
+                    <div class="left">© 2025 Peak Engage</div>
+                    <div class="right">
+                        <div class="social-icons">
+                            <!-- <img src="assets/images/twitter.svg" alt="Twitter" class="icon"> -->
+                            <img src="assets/images/icons/linkedin.png" alt="LinkedIn" class="icon">
+                            <img src="assets/images/icons/instagram.png" alt="Instagram" class="icon">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <style>
+            .footer {
+                padding: 50px 0 0;
+
+                .footer-text {
+                    font-size: 18px;
+                    color: #1c1c1c;
+                    text-align: center;
+                    width: 45%;
+                    margin: auto;
+                }
+
+                .footer-sec {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 20px 0;
+
+                    .social-icons {
+                        img {
+                            width: 40px;
+                            height: auto;
+                            margin-left: 4px;
+                        }
+                    }
+                }
+
+                @media (max-width: 768px) {
+                    .footer-text {
+                        width: 100%;
+                        font-size: 16px;
+                    }
+
+                }
+            }
+        </style>
+
+    </div>
+
+</body>
+
+</html>
