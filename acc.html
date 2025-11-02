@@ -5,146 +5,209 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 
 <body>
 
-    <section class="faq-section">
-        <div class="faq-header">
-            <span class="faq-tag">FAQs</span>
-            <h2>Questions? <br><span>Answers!</span></h2>
-        </div>
+    <!-- Include Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- TESTIMONIAL BLOCK -->
+    <section class="testimonial-section">
 
-        <div class="faq-container">
-            <!-- item start -->
-            <div class="faq-item">
-                <button class="faq-question">
-                    <div>
-                        <span class="faq-number">001</span>
-                        <span class="faq-title">We're different—our category is special. Will this even work for us?</span>
+        <div class="container">
+            <div class="peak-top">
+                <p class="peak-subtitle">
+                    Client Feedback / Testimonials
+                </p>
+                <div class="row">
+                    <div class="col-lg-8">
+                        <h2 class="peak-title">
+                            <span class="one">Real Stories</span>
+                            <span class="two">Proven Results</span>
+                        </h2>
                     </div>
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    <p>We baseline YOUR last 60 days. Category-relative wins beat generic "viral." The AI system adapts
-                        to you, not the other way around.</p>
+                    <div class="col-lg-4">
+                        <p class="peak-text">
+                            Hear from brands that scaled faster, automated smarter, and achieved measurable growth with
+                            Peak Engage.
+                        </p>
+                    </div>
                 </div>
             </div>
-            <!-- item end -->
 
+            <div class="row justify-content-center">
+                <div class="col-lg-7">
+                    <div class="swiper testimonialSwiper">
+                        <div class="swiper-wrapper">
+                            <!-- Testimonial 1 -->
+                            <div class="swiper-slide testimonial-box">
+                                <p class="testimonial-text">
+                                    “We’re very satisfied with Peak Engage. Their strategy changed how we think about
+                                    digital marketing. We now get real leads from our content as well as the digital
+                                    ecosystem part adds a new dimension to our business.”
+                                </p>
+                                <div class="testimonial-author">
+                                    <img src="assets/images/icons/test1.png" alt="Client 1" />
+                                    <div>
+                                        <h4> Mr. Ashwin Durai</h4>
+                                        <span> Founder of ICD Tuning</span>
+                                    </div>
+                                </div>
+                            </div>
 
+                            <!-- Testimonial 2 -->
+                            <div class="swiper-slide testimonial-box">
+                                <p class="testimonial-text">
+                                    “We’re getting all our leads only through the website! People keep calling and
+                                    booking sessions non-stop. This is exactly what we needed.”
+                                </p>
+                                <div class="testimonial-author">
+                                    <img src="assets/images/icons/text2.png" alt="Client 2" />
+                                    <div>
+                                        <h4> Colosseum Strength & MMA Team</h4>
+                                        <span>Ownership</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Pagination -->
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
+    <!-- Include Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        const swiper = new Swiper(".testimonialSwiper", {
+            loop: true,
+            centeredSlides: true,
+            slidesPerView: 1,
+            spaceBetween: 20,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            speed: 800,
+            breakpoints: {
+                768: {
+                    slidesPerView: 1,
+                    centeredSlides: true,
+                },
+                1024: {
+                    slidesPerView: 1,
+                    centeredSlides: true,
+                },
+            },
+        });
+    </script>
 
     <style>
-        body {
-            font-family: "Inter", sans-serif;
-            background: #0e0e0e;
-            color: #fff;
-            margin: 0;
-            padding: 0;
-        }
-
-        .faq-section {
-            background: linear-gradient(180deg, #111 0%, #1a1a1a 100%);
-            padding: 80px 15%;
-            border-radius: 16px;
-        }
-
-        .faq-header h2 {
-            font-size: 2.5rem;
-            margin-bottom: 30px;
-        }
-
-        .faq-header span {
-            color: #fff;
-            font-weight: 600;
-        }
-
-        .faq-header .faq-tag {
-            display: inline-block;
-            background: #2a2a2a;
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            margin-bottom: 10px;
-            color: #9f9f9f;
-        }
-
-        .faq-container {
-            border-top: 1px solid #333;
-        }
-
-        .faq-item {
-            border-bottom: 1px solid #333;
-            overflow: hidden;
-        }
-
-        .faq-question {
-            background: none;
-            border: none;
-            color: #fff;
+        /* testimonial */
+        .swiper {
             width: 100%;
-            padding: 20px 0 0;
-            text-align: left;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: color 0.3s;
-        }
-
-        .faq-number {
-            color: #666;
-            margin-right: 10px;
-            font-family: monospace;
-        }
-        .faq-title {
-            font-size: 18px;
-            font-weight: 500;
-        }
-
-        .faq-question:hover {
-            color: #aaa;
-        }
-
-        .faq-icon {
-            font-size: 1.5rem;
-            color: #999;
-            transition: transform 0.3s;
-        }
-
-        .faq-item.active .faq-icon {
-            transform: rotate(45deg);
-            color: #e74c3c;
-        }
-
-        .faq-answer {
-            max-height: 0;
+            margin: auto;
             overflow: hidden;
-            transition: max-height 0.4s ease, opacity 0.3s;
-            opacity: 0;
-            padding: 0 20px 20px 40px;
         }
 
-        .faq-item.active .faq-answer {
-            max-height: 200px;
-            opacity: 1;
+        .testimonial-box {
+            height: 280px;
+            background: #6f00ff;
+            padding: 40px 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.4s ease;
+            opacity: 0.9;
 
+        }
+
+        .swiper-slide-active {
+            transform: scale(1.05);
+            opacity: 1;
+        }
+
+        .testimonial-text {
+            font-size: 18px;
+            font-style: italic;
+            color: #ffffff;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .testimonial-author img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .testimonial-author h4 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .testimonial-author span {
+            font-size: 14px;
+            color: #b4b4b4;
+        }
+
+        .swiper-pagination-bullet {
+            background: #007bff;
+            opacity: 0.6;
+        }
+
+        .swiper-pagination-bullet-active {
+            opacity: 1;
+        }
+
+        .swiper-pagination {
+            position: relative;
+            margin-top: 25px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .swiper-pagination-bullet {
+            width: 10px;
+            height: 10px;
+            background: #ccc;
+            border-radius: 50%;
+            opacity: 0.6;
+            transition: all 0.3s ease;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: #1c1c1c;
+            width: 28px;
+            border-radius: 5px;
+            opacity: 1;
         }
     </style>
 
-    <script>
-        const faqItems = document.querySelectorAll(".faq-item");
 
-        faqItems.forEach(item => {
-            item.querySelector(".faq-question").addEventListener("click", () => {
-                item.classList.toggle("active");
-            });
-        });
-    </script>
 
 </body>
 
