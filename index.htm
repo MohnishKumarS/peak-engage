@@ -46,6 +46,12 @@
 
         .sec {
             margin-bottom: 20px;
+
+            @media (max-width:768px) {
+                &.mb {
+                    margin-bottom: 0;
+                }
+            }
         }
 
         .container {
@@ -60,7 +66,7 @@
             }
 
             .container {
-                padding: 60px 12px;
+                padding: 40px 12px;
                 width: 95%;
             }
         }
@@ -92,7 +98,8 @@
             box-shadow: rgba(255, 255, 255, 0.15) 0px 0px 20px 1.64px inset, rgba(0, 0, 0, 0.13) 0px 0.839802px 0.503881px -0.3125px, rgba(0, 0, 0, 0.13) 0px 1.99048px 1.19429px -0.625px, rgba(0, 0, 0, 0.13) 0px 3.63084px 2.1785px -0.9375px, rgba(0, 0, 0, 0.13) 0px 6.03627px 3.62176px -1.25px, rgba(0, 0, 0, 0.13) 0px 9.74808px 5.84885px -1.5625px, rgba(0, 0, 0, 0.13) 0px 15.9566px 9.57398px -1.875px, rgba(0, 0, 0, 0.13) 0px 27.4762px 16.4857px -2.1875px, rgba(0, 0, 0, 0.13) 0px 50px 30px -2.5px;
 
         }
-        .btn-main.green{
+
+        .btn-main.green {
             background-color: #1E7F3E;
             box-shadow: rgba(30, 127, 62, 0.15)
         }
@@ -117,8 +124,8 @@
         }
 
         .btn-main:hover {
-            background-color: #6f00ff;
-            color: #fff;
+            background-color: #fff;
+            color: #000;
             /* transform: translateY(-2px); */
         }
 
@@ -133,7 +140,7 @@
                 font-size: 10px;
                 font-weight: 800;
                 padding: 8px 16px;
-                color: #6f00ff;
+                color: #1E7F3E;
                 margin-bottom: 20px;
                 text-transform: uppercase;
                 border: 1px solid #525252;
@@ -187,7 +194,7 @@
                 color: #ffffff !important;
                 border: none;
                 box-shadow: 0 0 10px rgba(255, 255, 255, 0.15),
-            0 0 20px rgba(255, 255, 255, 0.05);
+                    0 0 20px rgba(255, 255, 255, 0.05);
 
                 /* box-shadow: 0 .839802px .503881px -.3125px #00000021, 0 1.99048px 1.19429px -.625px #00000021, 0 3.63084px 2.1785px -.9375px #00000021, 0 6.03627px 3.62176px -1.25px #00000021, 0 9.74808px 5.84885px -1.5625px #00000021, 0 15.9566px 9.57398px -1.875px #00000021, 0 27.4762px 16.4857px -2.1875px #00000021, 0 50px 30px -2.5px #00000021; */
 
@@ -196,15 +203,15 @@
                 }
             }
 
-    
+
         }
 
         .card-head {
-                display: flex;
-                align-items: center;
-                margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
 
-                /* .dot {
+            /* .dot {
                     display: inline-block;
                     width: 10px;
                     height: 10px;
@@ -213,35 +220,35 @@
                     margin-right: 10px;
                     animation: blowing 2s ease-in-out infinite;
                 } */
-            }
+        }
 
 
 
+        .card-title {
+            font-size: 24px;
+
+        }
+
+        .card-desc {
+            color: #d1d1d1;
+            margin: 0;
+        }
+
+        .card-media {
+            margin-bottom: 25px;
+        }
+
+        .card-img {
+            border-radius: 12px;
+            width: 100px;
+            height: auto;
+        }
+
+        @media (max-width:768px) {
             .card-title {
-                font-size: 24px;
-   
+                font-size: 20px;
             }
-
-            .card-desc {
-                color: #d1d1d1;
-                margin: 0;
-            }
-
-            .card-media {
-                margin-bottom: 25px;
-            }
-
-            .card-img {
-                border-radius: 12px;
-                width: 100px;
-                height: auto;
-            }
-
-            @media (max-width:768px) {
-                .card-title {
-                    font-size: 20px;
-                }
-            }
+        }
 
         .fs-18 {
             font-size: 18px !important;
@@ -313,8 +320,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    once: true, // animate only once
+    offset: 120, // trigger point
+    duration: 1000, // default duration
+    easing: 'ease-in-out', // smooth easing
+  });
+</script>
 
     <div class="page-warapper">
         <div class="header-top">
@@ -329,8 +350,9 @@
         <header class="peak-header">
             <div class="container p-0">
                 <div class="peak-nav">
-                    <img src="assets/images/icons/instagram.png" class="img-fluid" alt="">
-                    <a href="https://calendly.com/peakengagee/livedemo-call" target="_blank" class="btn-main">
+                    <!-- <img src="assets/images/icons/instagram.png" class="img-fluid" alt=""> -->
+                     <h2 class="peak-nav-title">Peak Engage</h2>
+                    <a href="https://calendly.com/peakengagee/livedemo-call" target="_blank" class="btn-main d-none d-md-block" >
                         <div class="btn-text">
                             <div>Book A Call</div>
                             <div>Now</div>
@@ -400,11 +422,6 @@
                 background-color: transparent;
             }
 
-            @media (max-width:576px) {
-                .peak-header {
-                    padding-top: 52px;
-                }
-            }
 
 
             .peak-header .peak-nav {
@@ -414,6 +431,15 @@
                 padding: 20px 40px;
                 background-color: transparent;
                 transition: all 0.3s ease;
+            }
+
+            .peak-nav-title{
+                font-family: 'Times New Roman', Times, serif;
+                font-size: 30px;
+                margin-bottom: 0;
+                font-weight: 800;
+                /* color: #424242;               
+                -webkit-text-stroke: 1px #e0e0e0; */
             }
 
 
@@ -429,6 +455,19 @@
 
             .peak-header.scrolled img {
                 transform: scale(0.95);
+            }
+
+            @media (max-width:576px) {
+                .peak-header {
+                    padding-top: 52px;
+                }
+
+            }
+            @media (max-width:768px) {
+                .peak-header .peak-nav {
+                    justify-content: center;
+                }
+
             }
         </style>
         <script>
@@ -447,11 +486,11 @@
             <div class="container py-0">
                 <div class="row">
                     <div class="col-lg-7">
-                        <div class="hero-block">
+                        <div class="hero-block" data-aos="fade-up" data-aos-duration="1000">
                             <h1 class="hero-title">
-                                <span>Recover $30,000+ in Lost </span>
-                                <span>E-Commerce Revenue Every Month</span>
-                                <span>No Extra Ad Spend or Effort
+                                <span data-aos="fade-up" data-aos-delay="100">Recover $30,000+ in Lost </span>
+                                <span data-aos="fade-up" data-aos-delay="300">E-Commerce Revenue Every Month</span>
+                                <span data-aos="fade-up" data-aos-delay="500">No Extra Ad Spend or Effort
                                     <samp class="shake">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64"
                                             height="64" fill="none" stroke="#fff" stroke-width="2"
@@ -463,12 +502,12 @@
                                 </span>
 
                             </h1>
-                            <p class="hero-subtitle">
+                            <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="900">
                                 Every day you delay, you’re leaking thousands in abandoned carts and lost sales.
                                 We fix your pipeline fast—automated systems recovering your revenue in 72 hours,
                                 guaranteed.
                             </p>
-                            <div class="hero-btn">
+                            <div class="hero-btn"  data-aos="fade-up" data-aos-delay="1100">
                                 <a href="https://calendly.com/peakengagee/livedemo-call" target="_blank"
                                     class="btn-main">
                                     <div class="btn-text">
@@ -479,7 +518,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-5">
+                    <div class="col-lg-5 d-none d-md-block">
                         <div class="peak-lists">
                             <div class="peak-lists-inner">
                                 <div class="peak-list">
@@ -784,38 +823,41 @@
         <section>
             <div class="container">
                 <div class="peak-top">
-                    <p class="peak-subtitle">
+                    <p class="peak-subtitle" data-aos="fade-down" data-aos-delay="200">
                         WHERE YOU'RE AT
                     </p>
-                    <div class="row">
+                    <div class="row ">
                         <div class="col-lg-8">
                             <h2 class="peak-title">
-                                <span class="one">Founders Stop Leaving $30,000+ </span>
-                                <span class="two">In Lost Sales Every Month</span>
+                                <span class="one"  data-aos="fade-right" data-aos-delay="400">Founders Stop Leaving $30,000+ </span>
+                                <span class="two"  data-aos="fade-left" data-aos-delay="600">In Lost Sales Every Month</span>
                             </h2>
                         </div>
-                        <div class="col-lg-4">
-                            <p class="peak-text">Boosts lifetime value with automated reviews, referrals, and win-backs.
-                            </p>
+                        <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="800">
+                            <div class="peak-num">01</div>
+                            <!-- <p class="peak-text">Boosts lifetime value with automated reviews, referrals, and win-backs.</p> -->
                         </div>
                     </div>
                 </div>
 
                 <div class="peak-sec pt-lg-4 pt-0">
-                    <div class="row align-items-center">
-                        <div class="col-lg-6 sec">
+                    <div class="row align-items-center flex-column-reverse flex-lg-row">
+                        <div class="col-lg-6 sec mb">
                             <div class="">
                                 <!-- <div class="card-head">
                                     <h3 class="card-title"> Your Complete Digital Ecosystem for Long-Term Growth</h3>
                                 </div> -->
 
                                 <ul class="peak-list mb-0">
-                                    <li><span class="dot yellow"></span>Abandoned carts alone steal up to 70% of your checkout
+                                    <li><span class="dot yellow"></span>Abandoned carts alone steal up to 70% of your
+                                        checkout
                                         attempts—money that’s
                                         walking out the door.</li>
-                                    <li><span class="dot yellow"></span>Manual chasing wastes time and energy without reliable
+                                    <li><span class="dot yellow"></span>Manual chasing wastes time and energy without
+                                        reliable
                                         returns.</li>
-                                    <li><span class="dot yellow"></span>You need a tested system that works on autopilot to get
+                                    <li><span class="dot yellow"></span>You need a tested system that works on autopilot
+                                        to get
                                         your money back, fast.</li>
                                 </ul>
 
@@ -830,64 +872,44 @@
                 </div>
 
 
-                <!-- <div class="peak-sec">
-                    <div class="row flex-column-reverse flex-lg-row">
-                        <div class="col-lg-8 sec">
-                            <div class="peak-card">
-                                <div class="card-head">
-                                    <h3 class="card-title"> Your Complete Digital Ecosystem for Long-Term Growth</h3>
-                                </div>
-
-                                <p class="peak-text">
-                                    Once your biggest leaks are plugged, we help you scale with ongoing automations that
-                                    grow
-                                    revenue month after month:
-                                </p>
-                                <ul class="peak-list">
-                                    <li><span class="dot"></span><strong>Attention Engine:</strong> Drives high-quality
-                                        traffic and leads.</li>
-                                    <li><span class="dot"></span><strong>Conversion Engine:</strong> Converts visitors
-                                        through smart nurturing flows.</li>
-                                    <li><span class="dot"></span><strong>Retention Engine:</strong> Builds lifetime
-                                        value through reviews, referrals, and
-                                        win-backs.</li>
-                                </ul>
-                                <p class="peak-text">
-                                    Every layer is built, tested, and tracked just for your business—so you get
-                                    compounding
-                                    growth far beyond quick wins.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 sec">
-                            <div class="peak-card">
-                                <img src="assets/images/p1.avif" class="img-fluid" loading="lazy" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
             </div>
         </section>
 
+        <style>
+            .peak-num {
+                font-size: 120px;
+                font-weight: 800;
+                color: #424242;
+                /* -webkit-text-stroke: 2px #16a34a;
+                text-transform: uppercase; */
+                letter-spacing: 1px;
+                line-height: 1;
+            }
+
+            @media (max-width:768px) {
+                .peak-num {
+                    font-size: 72px;
+                }
+            }
+        </style>
 
 
         <section>
             <div class="container">
                 <div class="peak-top">
-                    <p class="peak-subtitle">
+                    <p class="peak-subtitle" data-aos="fade-down" data-aos-delay="200">
                         Your Solution
                     </p>
                     <div class="row">
                         <div class="col-lg-8">
                             <h2 class="peak-title">
-                                <span class="one">Try Our 72-Hour Revenue </span>
-                                <span class="two">Recovery Pilot Risk-Free</span>
+                                <span class="one" data-aos="fade-right" data-aos-delay="400">Try Our 72-Hour Revenue </span>
+                                <span class="two" data-aos="fade-left" data-aos-delay="600">Recovery Pilot Risk-Free</span>
                             </h2>
                         </div>
-                        <!-- <div class="col-lg-4">
-                            <p class="peak-text">Boosts lifetime value with automated reviews, referrals, and win-backs.
-                            </p>
-                        </div> -->
+                        <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="800">
+                            <div class="peak-num">02</div>
+                        </div>
                     </div>
                 </div>
 
@@ -899,31 +921,36 @@
                                 <img src="assets/images/gif/g1.gif" class="img-fluid" loading="lazy" alt="">
                             </div>
                         </div>
-                        <div class="col-lg-6 sec">
+                        <div class="col-lg-6 sec mb">
                             <div class="card-block one">
                                 <div class="card-sec">
                                     <div class="card-head">
-                                        <h3 class="card-title fs-18"> Your Complete Digital Ecosystem for Long-Term Try Our
+                                        <h3 class="card-title fs-18"> Your Complete Digital Ecosystem for Long-Term Try
+                                            Our
                                             72-Hour Revenue Recovery Pilot Risk-Free</h3>
                                     </div>
                                     <p class="peak-text fw-bold">Peak Engage Automates Your Biggest Revenue Leaks By:
                                     </p>
                                     <ul class="peak-list">
-    
-                                        <li><span class="dot yellow"></span>Recovering 15-25% of abandoned carts and lost
+
+                                        <li><span class="dot yellow"></span>Recovering 15-25% of abandoned carts and
+                                            lost
                                             checkouts
                                         </li>
-                                        <li><span class="dot yellow"></span>Nurturing every new buyer into a lifelong repeat
+                                        <li><span class="dot yellow"></span>Nurturing every new buyer into a lifelong
+                                            repeat
                                             customer</li>
                                         <li><span class="dot yellow"></span>Automating review & referral systems to grow
                                             traffic
                                             organically</li>
-                                        <li><span class="dot yellow"></span>Winning back dormant buyers with targeted offers
+                                        <li><span class="dot yellow"></span>Winning back dormant buyers with targeted
+                                            offers
                                         </li>
                                     </ul>
-    
+
                                     <div class="peak-btn mt-3">
-                                        <a href="https://calendly.com/peakengagee/livedemo-call" target="_blank" class="btn-main green">
+                                        <a href="https://calendly.com/peakengagee/livedemo-call" target="_blank"
+                                            class="btn-main green">
                                             <div class="btn-text">
                                                 <div>Book Your Risk-Free Pilot Now: Limited Spots Only - 2
                                                     Spots Lef</div>
@@ -931,7 +958,7 @@
                                                     Spots Lef</div>
                                             </div>
                                         </a>
-    
+
                                     </div>
                                 </div>
 
@@ -948,29 +975,28 @@
         <section>
             <div class="container">
                 <div class="peak-top">
-                    <p class="peak-subtitle">
+                    <p class="peak-subtitle" data-aos="fade-down" data-aos-delay="200">
                         Solution / Automation section
                     </p>
                     <div class="row">
-                        <div class="col-lg-12">
+                        <div class="col-lg-8">
                             <h2 class="peak-title">
-                                <span class="one">Stop Leaving Money on the Table:</span>
-                                <span class="two">Unlock
+                                <span class="one" data-aos="fade-right" data-aos-delay="400">Stop Leaving Money on the Table:</span>
+                                <span class="two" data-aos="fade-left" data-aos-delay="600">Unlock
                                     the Full
                                     Growth Power
                                     of Your Business with Our Automated Digital Ecosystem</span>
                             </h2>
                         </div>
-                        <!-- <div class="col-lg-4">
-                            <p class="peak-text"> Peak Engage helps you recover, retain, and re-engage customers with
-                                ease.</p>
-                        </div> -->
+                        <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="800">
+                            <div class="peak-num text-lg-center text-start">03</div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="peak-sec">
                     <div class="row align-items-center flex-column-reverse flex-lg-row">
-                        <div class="col-lg-6 sec">
+                        <div class="col-lg-6 sec mb">
                             <div class="">
                                 <div class="card-block one">
                                     <div class="card-sec">
@@ -1094,7 +1120,7 @@
                     <div class="row">
                         <div class="col-lg-8">
                             <h2 class="peak-title">
-                                <span class="one">You're Earning Praise</span> <span class="two">But Not Profit</span>
+                                <span class="one" data-aos="fade-right" data-aos-delay="400">You're Earning Praise</span> <span class="two" data-aos="fade-left" data-aos-delay="600">But Not Profit</span>
                             </h2>
                         </div>
                         <div class="col-lg-4">
@@ -1140,14 +1166,14 @@
         <section>
             <div class="container">
                 <div class="peak-top">
-                    <p class="peak-subtitle">
+                    <p class="peak-subtitle" data-aos="fade-down" data-aos-delay="200">
                         MODULAR SOLUTIONS
                     </p>
                     <div class="row">
                         <div class="col-lg-8">
                             <h2 class="peak-title">
-                                <span class="one">Why </span>
-                                <span class="two">Peak Engage?</span>
+                                <span class="one" data-aos="fade-right" data-aos-delay="400">Why </span>
+                                <span class="two" data-aos="fade-left" data-aos-delay="600">Peak Engage?</span>
                             </h2>
                         </div>
                         <!-- <div class="col-lg-4">
@@ -1163,7 +1189,8 @@
                             <div class="peak-card blacky">
                                 <div class="row align-items-center">
                                     <div class="col-9">
-                                        <p class="card-desc">We build live revenue systems, not vague strategy decks or fancy
+                                        <p class="card-desc">We build live revenue systems, not vague strategy decks or
+                                            fancy
                                             reports</p>
                                     </div>
                                     <div class="col-3">
@@ -1204,7 +1231,8 @@
                                             <span class="dot blue"></span>
                                             <h3 class="card-title">Built for Clarity</h3>
                                         </div>
-                                        <p class="card-desc">Our team has 7-figure e-commerce marketing and automation experience</p>
+                                        <p class="card-desc">Our team has 7-figure e-commerce marketing and automation
+                                            experience</p>
 
                                         <!-- <p> You get full visibility and monthly optimizations—no guesswork, just
                                           transparent insights into what’s driving your revenue.</p> -->
@@ -1215,7 +1243,8 @@
                                     <div class="peak-card sec">
                                         <div class="row mb-4  align-items-center">
                                             <div class="col-8">
-                                                <p class="card-desc">Performance-first, pay-for-results mindset—no risk, all
+                                                <p class="card-desc">Performance-first, pay-for-results mindset—no risk,
+                                                    all
                                                     upside</p>
                                             </div>
                                             <div class="col-4">
@@ -1228,7 +1257,8 @@
                                             <span class="dot purple"></span>
                                             <h3 class="card-title">Precision</h3>
                                         </div>
-                                        <p class="card-desc">You get full visibility and monthly optimizations—no guesswork</p>
+                                        <p class="card-desc">You get full visibility and monthly optimizations—no
+                                            guesswork</p>
 
 
                                     </div>
@@ -1321,6 +1351,12 @@
                 &.three {
                     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/images/b2.avif') no-repeat center center !important;
                 }
+
+                @media (max-width:768px) {
+                    &{
+                        padding: 0;
+                    }
+                }
             }
         </style>
 
@@ -1329,17 +1365,17 @@
         <section>
             <div class="container">
                 <div class="peak-top">
-                    <p class="peak-subtitle">
+                    <p class="peak-subtitle" data-aos="fade-down" data-aos-delay="200"> 
                         HOW IT WORKS
                     </p>
                     <div class="row">
                         <div class="col-lg-8">
                             <h2 class="peak-title">
-                                <span class="one">Three </span>
-                                <span class="two"> Simple Steps </span>
+                                <span class="one" data-aos="fade-right" data-aos-delay="400">Three </span>
+                                <span class="two" data-aos="fade-left" data-aos-delay="600"> Simple Steps </span>
                             </h2>
                         </div>
-                        <div class="col-lg-4">
+                        <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="800">
                             <p class="peak-text"> Simple, Transparent Process That Drives Results</p>
                         </div>
                     </div>
@@ -1347,35 +1383,83 @@
 
                 <div class="peak-sec">
                     <div class="row">
-                        <div class="col-lg-4 col-md-6 col-12 sec">
+                        <div class="col-lg-4 col-md-6 col-12 sec" data-aos="flip-up" data-aos-delay="700">
                             <div class="peak-card">
-                                <div class="card-media">
+                                <div class="card-media d-none d-md-block">
                                     <img src="assets/images/p3.webp" class="img-fluid" loading="lazy" alt="">
                                 </div>
+                                <div class="card-num">
+                                    <svg width="200" height="100" viewBox="0 0 200 100"
+                                        xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                        <defs>
+                                            <style>
+                                                .num {
+                                                    font: 72px Inter, system-ui, sans-serif;
+                                                    font-weight: 800;
+                                                }
+                                            </style>
+                                        </defs>
+                                        <text x="10" y="72" class="num" fill="#ffffff" stroke="#16a34a" stroke-width="4"
+                                            stroke-linejoin="round">01</text>
+                                    </svg>
+
+                                </div>
                                 <div class="card-head">
-                                    <h4 class="card-title">1. Audit</h4>
+                                    <h4 class="card-title">Audit</h4>
                                 </div>
                                 <p class="card-desc"> 15-min call or data review sees where you’re losing revenue</p>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-6 col-12 sec">
+                        <div class="col-lg-4 col-md-6 col-12 sec" data-aos="flip-up" data-aos-delay="900">
                             <div class="peak-card blacky">
-                                <div class="card-media">
+                                <div class="card-media d-none d-md-block">
                                     <img src="assets/images/p3.webp" class="img-fluid" loading="lazy" alt="">
                                 </div>
+                                <div class="card-num">
+                                    <svg width="200" height="100" viewBox="0 0 200 100"
+                                        xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                        <defs>
+                                            <style>
+                                                .num {
+                                                    font: 72px Inter, system-ui, sans-serif;
+                                                    font-weight: 800;
+                                                }
+                                            </style>
+                                        </defs>
+                                        <text x="10" y="72" class="num" fill="#ffffff" stroke="#16a34a" stroke-width="4"
+                                            stroke-linejoin="round">02</text>
+                                    </svg>
+
+                                </div>
                                 <div class="card-head">
-                                    <h4 class="card-title">2. Deploy</h4>
+                                    <h4 class="card-title">Deploy</h4>
                                 </div>
                                 <p class="card-desc"> Customized, done-for-you automation launched in 72 hours</p>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-6 col-12 sec">
+                        <div class="col-lg-4 col-md-6 col-12 sec" data-aos="flip-up" data-aos-delay="1100">
                             <div class="peak-card ">
-                                <div class="card-media">
+                                <div class="card-media d-none d-md-block">
                                     <img src="assets/images/p3.webp" class="img-fluid" loading="lazy" alt="">
                                 </div>
+                                <div class="card-num">
+                                    <svg width="200" height="100" viewBox="0 0 200 100"
+                                        xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                        <defs>
+                                            <style>
+                                                .num {
+                                                    font: 72px Inter, system-ui, sans-serif;
+                                                    font-weight: 800;
+                                                }
+                                            </style>
+                                        </defs>
+                                        <text x="10" y="72" class="num" fill="#ffffff" stroke="#16a34a" stroke-width="4"
+                                            stroke-linejoin="round">03</text>
+                                    </svg>
+
+                                </div>
                                 <div class="card-head">
-                                    <h4 class="card-title">3. Profit</h4>
+                                    <h4 class="card-title">Profit</h4>
                                 </div>
                                 <p class="card-desc">Real-time dashboard tracks every won sale and repeat buyer</p>
                             </div>
@@ -1387,22 +1471,29 @@
 
         </section>
 
+        <style>
+            .card-num svg {
+                width: 80px;
+                height: auto;
+            }
+        </style>
+
         <!-- TESTIMONIAL BLOCK -->
         <section class="testimonial-section">
 
             <div class="container">
                 <div class="peak-top">
-                    <p class="peak-subtitle">
+                    <p class="peak-subtitle" data-aos="fade-down" data-aos-delay="200">
                         Client Stories
                     </p>
                     <div class="row">
                         <div class="col-lg-8">
                             <h2 class="peak-title">
-                                <span class="one">Real Stories</span>
-                                <span class="two">Proven Results</span>
+                                <span class="one" data-aos="fade-right" data-aos-delay="400">Real Stories</span>
+                                <span class="two" data-aos="fade-left" data-aos-delay="600">Proven Results</span>
                             </h2>
                         </div>
-                        <div class="col-lg-4">
+                        <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="800">
                             <p class="peak-text">
                                 Hear from brands that grew faster and smarter with Peak Engage.
                             </p>
@@ -1494,7 +1585,7 @@
 
             .testimonial-box {
                 height: 280px;
-                background: #6f00ff;
+                background: #444242;
                 padding: 40px 30px;
                 border-radius: 16px;
                 box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
@@ -1582,7 +1673,7 @@
             }
 
             .swiper-pagination-bullet-active {
-                background: #1c1c1c;
+                background: #ffffff;
                 width: 28px;
                 border-radius: 5px;
                 opacity: 1;
@@ -1784,8 +1875,8 @@
                     <div class="row">
                         <div class="col-lg-8">
                             <h2 class="peak-title">
-                                <span class="one">Three </span>
-                                <span class="two"> Simple Steps </span>
+                                <span class="one" data-aos="fade-right" data-aos-delay="400">Three </span>
+                                <span class="two" data-aos="fade-left" data-aos-delay="600"> Simple Steps </span>
                             </h2>
                         </div>
                         <div class="col-lg-4">
@@ -1794,7 +1885,7 @@
                     </div>
                 </div> -->
 
-                <div class="peak-sec">
+                <div class="peak-sec" data-aos="zoom-in-down" data-aos-delay="500">
                     <div class="row justify-content-center">
                         <div class="col-lg-6">
                             <div class="peak-card">
@@ -1808,7 +1899,8 @@
                                     costs you
                                     nothing.</p>
                                 <div class="mt-4 mb-2 text-center">
-                                    <a href="https://calendly.com/peakengagee/livedemo-call" target="_blank" class="btn-main">
+                                    <a href="https://calendly.com/peakengagee/livedemo-call" target="_blank"
+                                        class="btn-main">
                                         <div class="btn-text">
                                             <div> Get My Risk-Free Revenue Recovery Pilot Now</div>
                                             <div> Get My Risk-Free Revenue Recovery Pilot Now</div>
@@ -1836,7 +1928,8 @@
                     <ul class="footer-lists peak-list  m-0">
                         <li><a href="tel:+917338763693"><img src="assets/images/icons/phone-w.png" alt="phone">+91
                                 7338763693</a> </li>
-                        <li><a href="mailto:peakengagee@gmail.com"><img src="assets/images/icons/email-w.png" alt="email">
+                        <li><a href="mailto:peakengagee@gmail.com"><img src="assets/images/icons/email-w.png"
+                                    alt="email">
                                 peakengagee@gmail.com </a></li>
                     </ul>
                 </div>
@@ -1936,7 +2029,6 @@
 
                 @media (max-width: 768px) {
                     .footer-text {
-                        text-align: start;
                         width: 100%;
                         font-size: 16px;
                     }
