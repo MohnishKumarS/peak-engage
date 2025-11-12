@@ -7,6 +7,20 @@
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <script src="https://res.cloudinary.com/veseylab/raw/upload/v1684982764/magicmouse-2.0.0.cdn.min.js"></script>
+        <script>
+          window.addEventListener("DOMContentLoaded", function () {
+            const options = {
+              "outerStyle": "circle-basic",
+              "hoverEffect": "pointer-blur",
+              "hoverItemMove": false,
+              "defaultCursor": true,
+              "outerWidth": 30,
+              "outerHeight": 30
+            };
+            magicMouse(options);
+          });
+        </script>
         <script src="./app.js" type="module"></script>
 </head>
 
@@ -26,6 +40,11 @@
             overflow-x: hidden !important;
             line-height: 1.6;
         }
+
+        #magicMouseCursor {
+      border: 1px solid #aaaaaa !important;
+    }
+
         #container3D{
         position: fixed;
         inset: 0;
