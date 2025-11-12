@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3D Phone Scroll Animation</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+  <!-- GSAP CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="./app.js" type="module"></script>
+ 
+
+  <style>
+    body {
+      margin: 0;
+      height: 400vh; /* Make page scrollable */
+      background: #111;
+      color: white;
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+      cursor: none;
+    }
+
+    .my-6{
+        padding: 800px 0;
+    }
+    #container3D{
+        position: fixed;
+        inset: 0;
+        /* background: red; */
+        z-index: 100;
+        pointer-events: none;
+    }
+
+    .custom-cursor {
+    position: fixed; /* Keep it in the viewport */
+    width: 20px;
+    height: 20px;
+    border-radius: 50%; /* Make it a circle */
+    background-color: dodgerblue;
+    pointer-events: none; /* Allow interaction with elements beneath */
+    transform: translate(-50%, -50%); /* Center the cursor on the mouse position */
+    transition: transform 0.1s ease-out; /* Smooth movement */
+    z-index: 9999; /* Ensure it's on top */
+}
+
+  
+  </style>
+
+  
+</head>
+<body>
+  <div class="custom-cursor"></div>
+    <div id="container3D"></div>
+  <div class="title">Scroll to Rotate the Phone 📱</div>
+
+  <div class="section my-6" id="hero">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero consectetur tempore, eligendi a autem voluptates id debitis porro magnam distinctio doloremque, voluptate quidem ipsum provident obcaecati amet eos sit officiis dicta enim. Ea amet iusto minus consectetur odio. Sint omnis exercitationem libero reiciendis illo voluptas similique sunt aspernatur maiores quod?</div>
+  <div class="section my-6" id="intro">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero consectetur tempore, eligendi a autem voluptates id debitis porro magnam distinctio doloremque, voluptate quidem ipsum provident obcaecati amet eos sit officiis dicta enim. Ea amet iusto minus consectetur odio. Sint omnis exercitationem libero reiciendis illo voluptas similique sunt aspernatur maiores quod?</div>
+  <div class="section my-6" id="service">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero consectetur tempore, eligendi a autem voluptates id debitis porro magnam distinctio doloremque, voluptate quidem ipsum provident obcaecati amet eos sit officiis dicta enim. Ea amet iusto minus consectetur odio. Sint omnis exercitationem libero reiciendis illo voluptas similique sunt aspernatur maiores quod?</div>
+  <div class="section my-6" id="why">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero consectetur tempore, eligendi a autem voluptates id debitis porro magnam distinctio doloremque, voluptate quidem ipsum provident obcaecati amet eos sit officiis dicta enim. Ea amet iusto minus consectetur odio. Sint omnis exercitationem libero reiciendis illo voluptas similique sunt aspernatur maiores quod?</div>
+  <div class="section my-6" id="works">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero consectetur tempore, eligendi a autem voluptates id debitis porro magnam distinctio doloremque, voluptate quidem ipsum provident obcaecati amet eos sit officiis dicta enim. Ea amet iusto minus consectetur odio. Sint omnis exercitationem libero reiciendis illo voluptas similique sunt aspernatur maiores quod?</div>
+  <div class="section my-6" id="testi">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero consectetur tempore, eligendi a autem voluptates id debitis porro magnam distinctio doloremque, voluptate quidem ipsum provident obcaecati amet eos sit officiis dicta enim. Ea amet iusto minus consectetur odio. Sint omnis exercitationem libero reiciendis illo voluptas similique sunt aspernatur maiores quod?</div>
+  <div class="section my-6" id="faq">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero consectetur tempore, eligendi a autem voluptates id debitis porro magnam distinctio doloremque, voluptate quidem ipsum provident obcaecati amet eos sit officiis dicta enim. Ea amet iusto minus consectetur odio. Sint omnis exercitationem libero reiciendis illo voluptas similique sunt aspernatur maiores quod?</div>
+  <div class="section my-6" id="footer">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero consectetur tempore, eligendi a autem voluptates id debitis porro magnam distinctio doloremque, voluptate quidem ipsum provident obcaecati amet eos sit officiis dicta enim. Ea amet iusto minus consectetur odio. Sint omnis exercitationem libero reiciendis illo voluptas similique sunt aspernatur maiores quod?</div>
+
+<script>
+  const customCursor = document.querySelector('.custom-cursor');
+
+document.addEventListener('mousemove', (e) => {
+
+    // Update the position of the custom cursor
+    customCursor.style.left = `${e.clientX}px`;
+    customCursor.style.top = `${e.clientY}px`;
+});
+
+// Optional: Add a "click" animation
+document.addEventListener('mousedown', () => {
+    customCursor.style.transform = 'translate(-50%, -50%) scale(0.8)'; // Shrink on click
+});
+
+document.addEventListener('mouseup', () => {
+    customCursor.style.transform = 'translate(-50%, -50%) scale(1)'; // Return to normal size
+});
+</script>
+</body>
+</html>

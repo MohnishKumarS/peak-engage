@@ -7,6 +7,7 @@
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <script src="./app.js" type="module"></script>
 </head>
 
 <body>
@@ -25,6 +26,13 @@
             overflow-x: hidden !important;
             line-height: 1.6;
         }
+        #container3D{
+        position: fixed;
+        inset: 0;
+        /* background: red; */
+        z-index: 100;
+        pointer-events: none;
+    }
 
         a {
             color: #fff;
@@ -397,9 +405,14 @@
 </style>
 
     <div class="page-warapper">
-
+        <!-- bg blow -->
         <div class="peak-blow blow1"></div>
         <div class="peak-blow blow2"></div>
+
+        <!-- animation  bee -->
+        <div id="container3D"></div>
+
+        <!-- Header -->
         <div class="header-top">
             <div class="swiper textSwiper">
                 <div class="swiper-wrapper">
@@ -544,7 +557,7 @@
         </script>
 
         <!-- HERO BLOCK -->
-        <section class="peak-hero">
+        <section class="peak-hero section" id="hero">
             <div class="container py-0">
                 <div class="row">
                     <div class="col-lg-7">
@@ -882,7 +895,7 @@
 
 
         <!-- GROW UP -->
-        <section>
+        <section class="section" id="intro">
             <div class="container">
                 <div class="peak-top">
                     <p class="peak-subtitle" data-aos="fade-down" data-aos-delay="200">
@@ -1033,7 +1046,7 @@
         </section>
 
         <!-- service -->
-        <section>
+        <section class="section" id="service">
             <div class="container">
                 <div class="peak-top">
                     <p class="peak-subtitle" data-aos="fade-down" data-aos-delay="200">
@@ -1224,7 +1237,7 @@
 
 
         <!-- WHY CHOOSE -->
-        <section>
+        <section class="section" id="why">
             <div class="container">
                 <div class="peak-top">
                     <p class="peak-subtitle" data-aos="fade-down" data-aos-delay="200">
@@ -1423,7 +1436,7 @@
 
 
         <!-- How it works -->
-        <section>
+        <section class="section" id="works">
             <div class="container">
                 <div class="peak-top">
                     <p class="peak-subtitle" data-aos="fade-down" data-aos-delay="200"> 
@@ -1540,7 +1553,7 @@
         </style>
 
         <!-- TESTIMONIAL BLOCK -->
-        <section class="testimonial-section">
+        <section class="testimonial-section section" id="testi">
 
             <div class="container">
                 <div class="peak-top">
@@ -1742,7 +1755,7 @@
         </style>
 
 
-        <section class="faq-section">
+        <section class="faq-section section" id="faq">
             <div class="container">
                 <div class="faq-header">
                     <span class="faq-tag">FAQs</span>
@@ -1926,8 +1939,8 @@
             });
         </script>
 
-        <!-- How it works -->
-        <section>
+        
+        <section class="section" id="last">
             <div class="container">
                 <!-- <div class="peak-top">
                     <p class="peak-subtitle">
@@ -1979,7 +1992,7 @@
         </section>
 
 
-        <footer class="footer">
+        <footer class="footer section" id="footer">
             <div class="container pb-0">
                 <p class="footer-text" data-aos="fade-up" data-aos-delay="400">
                     <b>Peak Engage</b> — “Automating your revenue recovery—risk-free and results-driven.”
